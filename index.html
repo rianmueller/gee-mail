@@ -6,11 +6,75 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+				
+				//display date, subject, sender from window.geemails variable, create a div for each message
+
+//console.log('Does this work?');
+//console.log(window.geemails);
+
+for(i = 0; i < window.geemails.length; i++){
+	//console.log(window.geemails[i])
+
+	var messageBox = document.createElement('div');
+	messageBox.className = 'message';
+	messageBox.innerHTML = window.geemails[i].date + window.geemails[i].sender + window.geemails[i].subject;
+	main.appendChild(messageBox);
+}
+
+//first I must create child divs for the message bodies, hidden by default (using CSS)
+
+
+
+
+
+// var missing = "1 Big ol' beet";
+
+// recipe.addEventListener('click', addBeet);
+
+// function addBeet(){
+//     var fooBeet = document.createElement('li');
+//     fooBeet.className = 'mix';
+//     fooBeet.innerHTML = missing;
+//     ingredient.appendChild(fooBeet);
+
+// trying to show/hide the message body
+
+for(i = 0; i < window.geemails.length; i++){
+	messageBox[i].addEventListener('click', showHideBody);
+}
+
+function showHideBody(){
+	var messageClick = this.querySelector('.message');
+	if(messageClick.style.display == 'inline'){
+		messageClick.style.display = 'none'
+	}
+}
+
+
+
+// var navBox = document.getElementsByClassName('navi');
+
+// for(i = 0; i < navBox.length; i++){
+//     navBox[i].addEventListener('click', showHideContents)
+// }
+
+// function showHideContents(){
+//     var navElem = this.querySelector('.inner')
+//     if(navElem.style.display == 'inline'){
+//         navElem.style.display = 'none'
+//     }else{
+//         navElem.style.display = 'inline'
+//     }
+// }
+
+
       };
     </script>
 	</head>
 	<body>
+		<header>
+			<div class="header" id="head">Gee-mail</div>
+		</header>
 		<div class="container" id="main">
 			Build Me!
 		</div>
