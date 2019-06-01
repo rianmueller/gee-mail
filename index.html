@@ -13,19 +13,41 @@
 //console.log(window.geemails);
 
 for(i = 0; i < window.geemails.length; i++){
-	//console.log(window.geemails[i])
-
 	var messageBox = document.createElement('div');
-	messageBox.className = 'message';
+	messageBox.className = 'messageHeaders';
 	messageBox.innerHTML = window.geemails[i].date + window.geemails[i].sender + window.geemails[i].subject;
 	main.appendChild(messageBox);
+
+	var messageBody = document.createElement('div');
+	messageBody.className = 'messageBodies';
+	messageBody.innerHTML = window.geemails[i].body;
+	main.appendChild(messageBody);
 }
 
 //first I must create child divs for the message bodies, hidden by default (using CSS)
 
+// var messageHeaders = document.getElementsByClassName(messageHeaders);
+
+// for(i = 0; i < window.geemails.length; i++){
+
+// }
+
+// message.addEventListener('click', showHideBody);
+
+// var messages
 
 
 
+// var classname = document.getElementsByClassName("classname");
+
+// var myFunction = function() {
+//     var attribute = this.getAttribute("data-myattribute");
+//     alert(attribute);
+// };
+
+// for (var i = 0; i < classname.length; i++) {
+//     classname[i].addEventListener('click', myFunction, false);
+// }
 
 // var missing = "1 Big ol' beet";
 
@@ -37,18 +59,21 @@ for(i = 0; i < window.geemails.length; i++){
 //     fooBeet.innerHTML = missing;
 //     ingredient.appendChild(fooBeet);
 
+
+
+
 // trying to show/hide the message body
 
-for(i = 0; i < window.geemails.length; i++){
-	messageBox[i].addEventListener('click', showHideBody);
-}
+// for(i = 0; i < window.geemails.length; i++){
+// 	messageBox[i].addEventListener('click', showHideBody);
+// }
 
-function showHideBody(){
-	var messageClick = this.querySelector('.message');
-	if(messageClick.style.display == 'inline'){
-		messageClick.style.display = 'none'
-	}
-}
+// function showHideBody(){
+// 	var messageClick = this.querySelector('.message');
+// 	if(messageClick.style.display == 'inline'){
+// 		messageClick.style.display = 'none'
+// 	}
+// }
 
 
 
