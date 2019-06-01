@@ -34,67 +34,17 @@ function showHideBody(){
 	}
 }
 
-// var classname = document.getElementsByClassName("classname");
-
-// var myFunction = function() {
-//     var attribute = this.getAttribute("data-myattribute");
-//     alert(attribute);
-// };
-
-// for (var i = 0; i < classname.length; i++) {
-//     classname[i].addEventListener('click', myFunction, false);
-// }
-
-// var missing = "1 Big ol' beet";
-
-// recipe.addEventListener('click', addBeet);
-
-// function addBeet(){
-//     var fooBeet = document.createElement('li');
-//     fooBeet.className = 'mix';
-//     fooBeet.innerHTML = missing;
-//     ingredient.appendChild(fooBeet);
-
-
-
-
-// trying to show/hide the message body
-
-// for(i = 0; i < window.geemails.length; i++){
-// 	messageBox[i].addEventListener('click', showHideBody);
-// }
-
-// function showHideBody(){
-// 	var messageClick = this.querySelector('.message');
-// 	if(messageClick.style.display == 'inline'){
-// 		messageClick.style.display = 'none'
-// 	}
-// }
-
-
-
-// var navBox = document.getElementsByClassName('navi');
-
-// for(i = 0; i < navBox.length; i++){
-//     navBox[i].addEventListener('click', showHideContents)
-// }
-
-// function showHideContents(){
-//     var navElem = this.querySelector('.inner')
-//     if(navElem.style.display == 'inline'){
-//         navElem.style.display = 'none'
-//     }else{
-//         navElem.style.display = 'inline'
-//     }
-// }
-
+counter.innerHTML = window.geemails.length;
 
       };
     </script>
 	</head>
 	<body>
 		<header>
-			<div class="header" id="head">Gee-mail</div>
+			<div class="header" id="head">
+				<div id="counter">Foo Bar</div>
+				<div id="logo">Gee-mail</div>
+			</div>
 		</header>
 		<div class="container" id="main">
 			Build Me!

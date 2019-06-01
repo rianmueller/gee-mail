@@ -1,3 +1,15 @@
-/* .messageBodies{
+.messageBodies{
     display: none
-} */
+}
+
+#logo{
+    align: left;
+    display: inline-block;
+    width: 50%
+}
+
+#counter{
+    align: right;
+    display: inline-block;
+    width: 50%
+}
