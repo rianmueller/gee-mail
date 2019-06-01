@@ -36,14 +36,42 @@ function showHideBody(){
 
 counter.innerHTML = window.geemails.length;
 
+console.log(window.geemails);
+function addNewMessage(){
+	var newMessage = {
+		date: getNewMessage().date,
+		sender: getNewMessage().sender,
+		subject: getNewMessage().subject,
+		body: getNewMessage().body
+	};
+	window.geemails.push(newMessage);
+	
+	var messageHeader = document.createElement('div');
+	messageHeader.className = 'messageHeaders';
+	messageHeader.innerHTML = getNewMessage().date + getNewMessage().sender + getNewMessage().subject;
+	main.appendChild(messageHeader);
+
+	messageHeader.addEventListener('click', showHideBody);
+
+	var messageBody = document.createElement('div');
+	messageBody.className = 'messageBodies';
+	messageBody.innerHTML = getNewMessage().body;
+	messageBody.style.display = 'none';
+	//Why doesn't the CSS work instead?
+	messageHeader.appendChild(messageBody);
+}
+
+setInterval(addNewMessage, 15000)
+
+
       };
     </script>
 	</head>
 	<body>
 		<header>
 			<div class="header" id="head">
-				<div id="counter">Foo Bar</div>
 				<div id="logo">Gee-mail</div>
+				<div id="counter"></div>
 			</div>
 		</header>
 		<div class="container" id="main">
