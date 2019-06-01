@@ -11,8 +11,9 @@
 
 for(i = 0; i < window.geemails.length; i++){
 	var messageHeader = document.createElement('div');
+	var messageDate = window.geemails[i].date
 	messageHeader.className = 'messageHeaders';
-	messageHeader.innerHTML = window.geemails[i].date + window.geemails[i].sender + window.geemails[i].subject;
+	messageHeader.innerHTML = window.geemails[i].sender + ' ' + window.geemails[i].subject + ' ' + messageDate;
 	main.appendChild(messageHeader);
 
 	messageHeader.addEventListener('click', showHideBody);
@@ -20,23 +21,11 @@ for(i = 0; i < window.geemails.length; i++){
 	var messageBody = document.createElement('div');
 	messageBody.className = 'messageBodies';
 	messageBody.innerHTML = window.geemails[i].body;
-	messageBody.style.display = 'none';
-	//Why doesn't the CSS work instead?
 	messageHeader.appendChild(messageBody);
+
+	counter.innerHTML = 'Messages: ' + window.geemails.length;
 }
 
-function showHideBody(){
-	var messageClick = this.querySelector('.messageBodies');
-	if(messageClick.style.display === 'block'){
-		messageClick.style.display = 'none';
-	}else{
-		messageClick.style.display = 'block';
-	}
-}
-
-counter.innerHTML = window.geemails.length;
-
-console.log(window.geemails);
 function addNewMessage(){
 	var newMessage = {
 		date: getNewMessage().date,
@@ -47,8 +36,9 @@ function addNewMessage(){
 	window.geemails.push(newMessage);
 	
 	var messageHeader = document.createElement('div');
+	var messageDate = getNewMessage().date
 	messageHeader.className = 'messageHeaders';
-	messageHeader.innerHTML = getNewMessage().date + getNewMessage().sender + getNewMessage().subject;
+	messageHeader.innerHTML = getNewMessage().sender + ' ' + getNewMessage().subject + ' ' + messageDate;
 	main.appendChild(messageHeader);
 
 	messageHeader.addEventListener('click', showHideBody);
@@ -56,14 +46,21 @@ function addNewMessage(){
 	var messageBody = document.createElement('div');
 	messageBody.className = 'messageBodies';
 	messageBody.innerHTML = getNewMessage().body;
-	messageBody.style.display = 'none';
-	//Why doesn't the CSS work instead?
 	messageHeader.appendChild(messageBody);
-	counter.innerHTML = window.geemails.length;
+	counter.innerHTML = 'Messages: ' + window.geemails.length;
 }
 //function contains a lot of duplicate code - is there a good way to simplify and avoid duplicaton?
 
 setInterval(addNewMessage, 1000)
+
+function showHideBody(){
+	var messageClick = this.querySelector('.messageBodies');
+	if(messageClick.style.display === 'block'){
+		messageClick.style.display = 'none';
+	}else{
+		messageClick.style.display = 'block';
+	}
+}
 
       };
     </script>
@@ -71,12 +68,10 @@ setInterval(addNewMessage, 1000)
 	<body>
 		<header>
 			<div class="header" id="head">
-				<div id="logo">Gee-mail</div>
-				<div id="counter"></div>
+				<h1 id="logo">Gee-mail</h1>
+				<h2 id="counter"></h2>
 			</div>
 		</header>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+		<div class="container" id="main"></div>
 	</body>
 </html>

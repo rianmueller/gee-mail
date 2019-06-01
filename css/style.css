@@ -1,19 +1,38 @@
 body{
-    background-color: coral;
+    background-color: cornflowerblue;
 }
 
-.messageBodies{
-    display: none
+.header{
+    background-color: lightblue;
+}
+
+.container{
+    background-color: lightgoldenrodyellow
 }
 
 #logo{
+    background-color: grey;
     align: left;
     display: inline-block;
-    width: 50%
+    width: 50%;
+    font-family: Arial;
 }
 
 #counter{
+    background-color: pink;
     align: right;
     display: inline-block;
-    width: 50%
+    width: 50%;
+    font-family: comic-sans;
+}
+
+.messageHeaders{
+    background-color: lightgreen;
+    padding: 10px
+}
+
+.messageBodies{
+    background-color: yellow;
+    padding: 10px;
+    display: none
 }
