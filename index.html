@@ -59,10 +59,11 @@ function addNewMessage(){
 	messageBody.style.display = 'none';
 	//Why doesn't the CSS work instead?
 	messageHeader.appendChild(messageBody);
+	counter.innerHTML = window.geemails.length;
 }
+//function contains a lot of duplicate code - is there a good way to simplify and avoid duplicaton?
 
-setInterval(addNewMessage, 15000)
-
+setInterval(addNewMessage, 1000)
 
       };
     </script>
