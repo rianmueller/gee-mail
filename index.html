@@ -11,9 +11,8 @@
 
 for(i = 0; i < window.geemails.length; i++){
 	var messageHeader = document.createElement('div');
-	var messageDate = window.geemails[i].date
 	messageHeader.className = 'messageHeaders';
-	messageHeader.innerHTML = window.geemails[i].sender + ' ' + window.geemails[i].subject + ' ' + messageDate;
+	messageHeader.innerHTML = window.geemails[i].sender + ' ' + window.geemails[i].subject + ' ' + window.geemails[i].date;
 	main.appendChild(messageHeader);
 
 	messageHeader.addEventListener('click', showHideBody);
@@ -27,25 +26,19 @@ for(i = 0; i < window.geemails.length; i++){
 }
 
 function addNewMessage(){
-	var newMessage = {
-		date: getNewMessage().date,
-		sender: getNewMessage().sender,
-		subject: getNewMessage().subject,
-		body: getNewMessage().body
-	};
+	var newMessage = getNewMessage();
 	window.geemails.push(newMessage);
 	
 	var messageHeader = document.createElement('div');
-	var messageDate = getNewMessage().date
 	messageHeader.className = 'messageHeaders';
-	messageHeader.innerHTML = getNewMessage().sender + ' ' + getNewMessage().subject + ' ' + messageDate;
+	messageHeader.innerHTML = newMessage.sender + ' ' + newMessage.subject + ' ' + newMessage.date;
 	main.appendChild(messageHeader);
 
 	messageHeader.addEventListener('click', showHideBody);
 
 	var messageBody = document.createElement('div');
 	messageBody.className = 'messageBodies';
-	messageBody.innerHTML = getNewMessage().body;
+	messageBody.innerHTML = newMessage.body;
 	messageHeader.appendChild(messageBody);
 	counter.innerHTML = 'Messages: ' + window.geemails.length;
 }
